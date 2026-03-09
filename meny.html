@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meny - Sannegårdens Pizzeria</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Meny - Sannegårdens Pizzeria</title>
 </head>
-<body>
+<body class="menu-page">
     <div id="container">
-        
+
         <header>
             SANNEGÅRDENS
             <div class="menu-btn" id="menuBtn">
@@ -21,58 +21,81 @@
 
         <nav id="navbar">
             <ul>
-                <li><a href="main.html">HEM</a></li>
-                <li><a href="meny.html">VÅR MENY</a></li>
-                <li><a href="karta.html">HITTA HIT</a></li>
+                <li><a href="main.html">Hem</a></li>
+                <li><a href="meny.html">Vår meny</a></li>
+                <li><a href="karta.html">Hitta hit</a></li>
             </ul>
         </nav>
 
         <main>
             <div class="menu-container">
                 <h1 class="menu-title">VÅR MENY</h1>
-                <p>Alla våra pizzor bakas med färska ingredienser och kärlek.</p>
-                
+                <p class="menu-text">Alla våra pizzor bakas med färska ingredienser och kärlek.</p>
+
                 <div class="pizza-grid">
+
                     <div class="pizza-item">
+                        <img src="img/mozarella.jpg" alt="Margherita">
                         <h3>MARGHERITA</h3>
-                        <p>Tomatsås, ost</p>
+                        <p>Tomatsås, mozzarella</p>
                         <span class="price">95 kr</span>
                     </div>
+
                     <div class="pizza-item">
-                        <h3>VESUVIO</h3>
-                        <p>Tomatsås, ost, skinka</p>
+                        <img src="img/kebab.jpg" alt="Vesuvio">
+                        <h3>KEBABPIZZA</h3>
+                        <p>Tomatsås, ost, kebabkött, lök, feferoni, sås</p>
                         <span class="price">105 kr</span>
                     </div>
+
                     <div class="pizza-item">
+                        <img src="img/ost.jpg" alt="Capricciosa">
                         <h3>CAPRICCIOSA</h3>
                         <p>Tomatsås, ost, skinka, champinjoner</p>
                         <span class="price">115 kr</span>
                     </div>
+
                     <div class="pizza-item">
+                        <img src="img/ost.jpg" alt="Hawaii">
                         <h3>HAWAII</h3>
                         <p>Tomatsås, ost, skinka, ananas</p>
                         <span class="price">115 kr</span>
                     </div>
-                    <div class="pizza-item">
-                        <h3>KEBABPIZZA</h3>
-                        <p>Tomatsås, ost, kebabkött, lök, feferoni, sås</p>
+
+                    <a href="produkt.html" class="pizza-item pizza-link">
+                        <img src="img/kebab.jpg" alt="Kebabpizza">
+                        <h3>SKINKA</h3>
+                        <p>Tomatsås, ost, skinka</p>
                         <span class="price">125 kr</span>
-                    </div>
+                    </a>
+
                     <div class="pizza-item">
-                        <h3>QUATTRO STAGIONI</h3>
-                        <p>Skinka, räkor, champinjoner, musslor, kronärtskocka</p>
+                        <img src="img/mozarella.jpg" alt="Vegansk special">
+                        <h3>VEGANSK SPECIAL</h3>
+                        <p>Tomatsås, vegansk ost, grönsaker</p>
                         <span class="price">135 kr</span>
                     </div>
+
                 </div>
             </div>
         </main>
 
-        <footer>
-            <div class="footer-social">
-                <a href="#"><img src="img/facebook-logo.png" alt="FB"></a>
-                <a href="#"><img src="img/instagram.png" alt="IG"></a>
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com" target="_blank"><img src="img/tiktok.png" alt="TikTok"></a>
+                </div>
+                <div class="footer-links">
+                    <a href="om-oss.html" class="about-link">Om oss</a>
+                    <span class="dot">•</span>
+                    <span>Allergiinformation</span>
+                    <span class="dot">•</span>
+                    <span>Kontakt</span>
+                </div>
+                <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
             </div>
-            <p>© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
         </footer>
 
     </div>

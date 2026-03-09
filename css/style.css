@@ -1,24 +1,36 @@
 /* ==========================================
-   1. GENERELL STIL (Gäller alla sidor/enheter)
+   1. GENERELL STIL
    ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f4ecea;
+    background-color: #f3eceb;
+}
+
+#container {
+    width: 100%;
+    min-height: 100vh;
 }
 
 header {
-    background-color: #8b1a1a; 
+    background-color: #9f1414;
     color: white;
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     z-index: 1001;
-    position: relative; 
+    position: relative;
+    height: 125px;
 }
 
 nav {
-    background-color: #8b1a1a;
+    background-color: #9f1414;
+    height: 125px;
 }
 
 nav ul {
@@ -32,83 +44,143 @@ nav a {
     color: white;
     text-transform: uppercase;
     font-weight: 700;
-    transition: 0.3s;
+    font-size: 0.85rem;
 }
 
 main {
-    /* FIX: Här lägger vi till mörkret över bilden (0.5 = 50% mörker) */
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/ugn.jpg'); 
-    background-size: cover;
-    background-position: center;
+    text-align: center;
+}
+
+footer {
+    background-color: #9f1414;
     color: white;
     text-align: center;
-    min-height: 60vh;
+    padding: 18px 10px;
+    height: 125px;
+}
+
+.footer-social {
+    margin-bottom: 6px;
+}
+
+.footer-social img {
+    width: 22px;
+    margin: 0 8px;
+    filter: invert(1);
+}
+
+.footer-links {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-links span {
+    color: #f3eaea;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 0 4px;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
 }
 
 .main-btn {
     display: inline-block;
-    padding: 15px 45px;
-    background-color: #8b1a1a; 
+    padding: 12px 34px;
+    background-color: #9f1414;
     color: white;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 4px;
+    font-weight: 700;
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    margin-top: 18px;
 }
 
-.bg-pizza, .bg-restaurang {
-    border-radius: 10px;
+.bg-pizza,
+.bg-restaurang {
+    border-radius: 8px;
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.18);
 }
 
-.bg-pizza { background-image: url('../img/pizza.jpg'); }
-.bg-restaurang { background-image: url('../img/bord.jpg'); }
+.bg-pizza {
+    background-image: url('../img/pizza.jpg');
+}
 
-.bg-pizza a, .bg-restaurang a {
+.bg-restaurang {
+    background-image: url('../img/bord.jpg');
+}
+
+.bg-pizza a,
+.bg-restaurang a {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     text-decoration: none;
     color: white;
-    background: rgba(0,0,0,0.3); 
+    background: rgba(0,0,0,0.28);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.25rem;
 }
 
-footer {
-    background: #8b1a1a; 
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-.footer-social img {
-    width: 25px;
-    margin: 0 10px;
-    filter: invert(1);
-}
-
-.footer-links a, .footer-links span {
-    color: #eee;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
 
 /* ==========================================
-   2. DESKTOP STIL (Skärmar över 768px)
+   2. MAIN-SIDA
    ========================================== */
+
+body.main-page main {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+        url('../img/ugn.jpg');
+    background-repeat: no-repeat;
+    color: white;
+}
+
+body.main-page main h1 {
+    margin: 0 0 10px 0;
+    font-size: 3.6rem;
+    font-weight: 700;
+}
+
+body.main-page main h2 {
+    margin: 0 0 16px 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+body.main-page main p {
+    margin: 0 auto;
+    max-width: 720px;
+    line-height: 1.4;
+    font-size: 1.1rem;
+}
+
+body.main-page aside {
+    background-color: #f3eceb;
+}
+
+
+/* ---------- MAIN-SIDA DESKTOP ---------- */
 @media (min-width: 769px) {
-    #container {
+    body.main-page #container {
         display: grid;
-        height: 150vh; 
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 15vh auto 50vh 15vh;
+        height: 150vh;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 125px 1fr 30% 125px;
         grid-template-areas:
             "hd nav"
             "mn mn"
@@ -116,72 +188,87 @@ footer {
             "ft ft";
     }
 
-    header {
+    body.main-page header {
         grid-area: hd;
         display: flex;
         align-items: center;
-        padding-left: 50px;
+        padding-left: 30px;
     }
 
-    .menu-btn { display: none; }
-
-    nav {
+    body.main-page nav {
         grid-area: nav;
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    nav ul {
+    body.main-page nav ul {
         display: flex;
-        gap: 40px;
+        gap: 32px;
     }
 
-    main {
+    body.main-page main {
         grid-area: mn;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        min-height: 520px;
+        padding: 40px 20px;
+        background-size: cover;
+        background-position: center;
     }
 
-    main h1 { font-size: 4rem; margin: 0; }
+    body.main-page .hero-text {
+        text-align: center;
+        transform: translateY(-5px);
+    }
 
-    aside {
+    body.main-page aside {
         grid-area: as;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 30px 20px;
+        min-height: 24vh;
     }
 
-    .bilder { display: flex; gap: 40px; }
-
-    .bg-pizza, .bg-restaurang {
-        width: 350px;
-        height: 250px;
+    body.main-page .bilder {
+        display: flex;
+        gap: 70px;
+        justify-content: center;
+        align-items: center;
     }
 
-    footer {
+    body.main-page .bg-pizza,
+    body.main-page .bg-restaurang {
+        width: 400px;
+        height: 210px;
+    }
+
+    body.main-page footer {
         grid-area: ft;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 10px;
     }
 }
 
-/* ==========================================
-   3. MOBIL STIL (Skärmar under 768px)
-   ========================================== */
+/* ---------- MAIN-SIDA MOBIL ---------- */
 @media (max-width: 768px) {
-    #container {
+    body.main-page #container {
         display: grid;
         grid-template-columns: 100%;
-        grid-template-areas: "hd" "mn" "as" "ft";
+        grid-template-areas:
+            "hd"
+            "mn"
+            "as"
+            "ft";
     }
 
-    header {
+    body.main-page header {
         grid-area: hd;
-        height: 12vh;
+        min-height: 125px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -190,69 +277,287 @@ footer {
         top: 0;
     }
 
-    .menu-btn {
+    body.main-page .menu-btn {
         display: flex;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
     }
 
-    .menu-btn span {
-        width: 30px;
-        height: 3px;
-        background-color: white;
-    }
-
-    nav {
+    body.main-page nav {
         position: fixed;
-        top: 12vh;
+        top: 125px;
         right: -100%;
         width: 100%;
-        height: 88vh;
+        height: calc(100vh - 125px);
         z-index: 1000;
-        transition: 0.5s ease-in-out;
-        background-color: #8b1a1a; 
+        transition: 0.4s ease-in-out;
+        background-color: #9f1414;
     }
 
-
-    nav.active { 
-        right: 0; 
+    body.main-page nav.active {
+        right: 0;
     }
 
-    nav ul {
-        flex-direction: column;
+    body.main-page nav ul {
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 28px;
         padding-top: 50px;
     }
 
-    main {
+    body.main-page main {
         grid-area: mn;
-        padding: 60px 20px;
-    }
-
-    main h1 { font-size: 2.2rem; }
-
-    aside {
-        grid-area: as;
+        min-height: 360px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         padding: 40px 20px;
+        background-size: cover;
+        background-position: center;
     }
 
-    .bilder {
+    body.main-page main h1 {
+        font-size: 2.2rem;
+    }
+
+    body.main-page main h2 {
+        font-size: 1.5rem;
+    }
+
+    body.main-page main p {
+        font-size: 1rem;
+    }
+
+    body.main-page aside {
+        grid-area: as;
+        padding: 25px 20px;
+    }
+
+    body.main-page .bilder {
         display: flex;
         flex-direction: column;
         gap: 20px;
         align-items: center;
     }
 
-    .bg-pizza, .bg-restaurang {
+    body.main-page .bg-pizza,
+    body.main-page .bg-restaurang {
         width: 90vw;
-        height: 200px;
+        max-width: 340px;
+        height: 180px;
     }
 
-    footer {
+    body.main-page footer {
         grid-area: ft;
+        height: auto;
+        min-height: 125px;
+        padding: 25px 20px;
+    }
+}
+
+
+/* ==========================================
+   3. MENY-SIDA
+   ========================================== */
+
+body.menu-page main {
+    background-color: #f3eceb;
+    color: #222;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+body.menu-page .menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body.menu-page .menu-title {
+    font-size: 2.5rem;
+    color: #9f1414;
+    margin: 0 0 10px 0;
+}
+
+body.menu-page .menu-text {
+    margin: 0 0 35px 0;
+    color: #444;
+    font-size: 1.05rem;
+}
+
+body.menu-page .pizza-grid {
+    display: grid;
+    gap: 25px;
+}
+
+body.menu-page .pizza-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    padding-bottom: 18px;
+    transition: transform 0.25s ease;
+}
+
+body.menu-page .pizza-item:hover {
+    transform: translateY(-5px);
+}
+
+body.menu-page .pizza-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+body.menu-page .pizza-item h3 {
+    margin: 15px 0 10px 0;
+    color: #9f1414;
+    font-size: 1.25rem;
+}
+
+body.menu-page .pizza-item p {
+    margin: 0 15px 15px 15px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+body.menu-page .price {
+    display: inline-block;
+    background-color: #9f1414;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+body.menu-page .pizza-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+
+/* ---------- MENY-SIDA DESKTOP ---------- */
+@media (min-width: 769px) {
+    body.menu-page #container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 125px auto 125px;
+        grid-template-areas:
+            "hd nav"
+            "mn mn"
+            "ft ft";
+    }
+
+    body.menu-page header {
+        grid-area: hd;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    body.menu-page nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.menu-page nav ul {
+        display: flex;
+        gap: 32px;
+    }
+
+    body.menu-page main {
+        grid-area: mn;
+    }
+
+    body.menu-page .pizza-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    body.menu-page footer {
+        grid-area: ft;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+    }
+}
+
+
+/* ---------- MENY-SIDA MOBIL ---------- */
+@media (max-width: 768px) {
+    body.menu-page #container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft";
+    }
+
+    body.menu-page header {
+        grid-area: hd;
+        min-height: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: sticky;
+        top: 0;
+    }
+
+    body.menu-page .menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    body.menu-page nav {
+        position: fixed;
+        top: 125px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 125px);
+        z-index: 1000;
+        transition: 0.4s ease-in-out;
+        background-color: #9f1414;
+    }
+
+    body.menu-page nav.active {
+        right: 0;
+    }
+
+    body.menu-page nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding-top: 50px;
+    }
+
+    body.menu-page main {
+        grid-area: mn;
         padding: 40px 20px;
+    }
+
+    body.menu-page .menu-title {
+        font-size: 2rem;
+    }
+
+    body.menu-page .pizza-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.menu-page footer {
+        grid-area: ft;
+        height: auto;
+        min-height: 125px;
+        padding: 25px 20px;
     }
 }
