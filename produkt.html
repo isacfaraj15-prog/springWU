@@ -1,13 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produkt - Sannegårdens Pizzeria</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-  jsjasd
-  
+<body class="product-page">
+    <div id="container">
+
+        <header>
+            SANNEGÅRDENS
+            <div class="menu-btn" id="menuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="main.html">Hem</a></li>
+                <li><a href="meny.html">Vår meny</a></li>
+                <li><a href="karta.html">Hitta hit</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="product-hero">
+                <div class="product-hero-image">
+                    <img src="img/mozarella2.jpg" alt="Margherita pizza">
+                </div>
+
+                <div class="product-hero-content">
+                    <p class="product-tag">KLASSISK FAVORIT</p>
+                    <h1>MARGHERITA</h1>
+                    <p class="product-lead">
+                        En enkel och elegant pizza med fyllig tomatsås och smält mozzarella.
+                        Perfekt för dig som älskar klassiska italienska smaker.
+                    </p>
+
+                    <div class="product-price-box">
+                        <span class="price-label">Pris</span>
+                        <span class="price-value">95 kr</span>
+                    </div>
+
+                    <div class="product-info-list">
+                        <p><strong>Ingredienser:</strong> Tomatsås, mozzarella</p>
+                        <p><strong>Storlek:</strong> Normal</p>
+                        <p><strong>Allergener:</strong> Mjölk, gluten</p>
+                    </div>
+
+                    <a href="meny.html" class="main-btn">Tillbaka till menyn</a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com" target="_blank"><img src="img/tiktok.png" alt="TikTok"></a>
+                </div>
+                <div class="footer-links">
+                    <a href="om-oss.html" class="about-link">Om oss</a>
+                    <span class="dot">•</span>
+                    <span>Allergiinformation</span>
+                    <span class="dot">•</span>
+                    <span>Kontakt</span>
+                </div>
+                <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
