@@ -55,8 +55,12 @@ footer {
     background-color: #9f1414;
     color: white;
     text-align: center;
-    padding: 18px 10px;
+    padding: 10px 10px;
     height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer-social {
@@ -65,7 +69,7 @@ footer {
 
 .footer-social img {
     width: 22px;
-    margin: 0 8px;
+    margin: 0 20px;
     filter: invert(1);
 }
 
@@ -79,6 +83,23 @@ footer {
     text-decoration: none;
     font-size: 0.85rem;
     margin: 0 4px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+.social-links img {
+    width: 40px;
+    filter: invert(1);
+    transition: transform 0.3s;
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
 }
 
 .menu-btn {
@@ -248,9 +269,9 @@ body.main-page aside {
     body.main-page footer {
         grid-area: ft;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
     }
 }
 
@@ -482,9 +503,9 @@ body.menu-page .pizza-link {
     body.menu-page footer {
         grid-area: ft;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
     }
 }
 
@@ -582,13 +603,14 @@ body.product-page .product-hero-image {
     width: 100%;
     overflow: hidden;
     background-color: #000;
+    height: auto;
 }
 
 body.product-page .product-hero-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    object-fit: cover;
+    object-fit: unset;
 }
 
 body.product-page .product-hero-content {
@@ -660,6 +682,75 @@ body.product-page .product-info-list p {
     color: #333;
 }
 
+body.product-page .product-hero-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+body.product-page .product-details {
+    flex: 1;
+}
+
+body.product-page .product-recommendations {
+    flex: 1;
+    padding-top: 10px;
+}
+
+body.product-page .product-recommendations h2 {
+    font-size: 1.3rem;
+    color: #9f1414;
+    margin: 0 0 20px 0;
+}
+
+body.product-page .rec-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+body.product-page .rec-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #222;
+    background: #f9f2f2;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+body.product-page .rec-item:hover {
+    transform: translateX(5px);
+}
+
+body.product-page .rec-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+body.product-page .rec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+body.product-page .rec-name {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+body.product-page .rec-price {
+    color: #9f1414;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
 
 /* ---------- PRODUKT-SIDA DESKTOP ---------- */
 @media (min-width: 769px) {
@@ -698,9 +789,7 @@ body.product-page .product-info-list p {
     }
 
     body.product-page .product-hero-image {
-        height: 70vh;
-        min-height: 520px;
-        max-height: 760px;
+        height: auto;
     }
 
     body.product-page .product-hero-content {
@@ -718,9 +807,9 @@ body.product-page .product-info-list p {
     body.product-page footer {
         grid-area: ft;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 10px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
     }
 }
 
@@ -782,7 +871,7 @@ body.product-page .product-info-list p {
     }
 
     body.product-page .product-hero-image {
-        height: 300px;
+        height: auto;
     }
 
     body.product-page .product-hero-content {
