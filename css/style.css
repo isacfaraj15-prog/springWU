@@ -897,3 +897,287 @@ body.product-page .rec-price {
         padding: 25px 20px;
     }
 }
+
+/* ==========================================
+   5. EVENEMANG-SIDA
+   ========================================== */
+
+body.evenemang-page .ev-hero {
+    width: 100%;
+    height: calc(100vh - 125px);
+    background-image: url('../img/backgrund.jpg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #1a0a0a;
+}
+
+body.evenemang-page .ev-hero-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    background-color: #9f1414;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid rgba(255,255,255,0.45);
+    border-radius: 4px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.2s;
+}
+
+body.evenemang-page .ev-hero-btn:hover {
+    background-color: #7a0f0f;
+}
+
+
+body.evenemang-page .ev-intro {
+    background-color: #f3eceb;
+    padding: 55px 20px 30px 20px;
+    text-align: center;
+}
+
+body.evenemang-page .ev-intro-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3a1a00;
+    margin: 0 0 14px 0;
+}
+
+body.evenemang-page .ev-intro-text {
+    max-width: 680px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+
+body.evenemang-page .ev-cards-section {
+    background-color: #9f1414;
+    padding: 50px 20px 60px 20px;
+}
+
+body.evenemang-page .ev-cards-grid {
+    display: grid;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+body.evenemang-page .ev-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    padding-bottom: 24px;
+    text-align: center;
+    transition: transform 0.25s ease;
+}
+
+body.evenemang-page .ev-card:hover {
+    transform: translateY(-6px);
+}
+
+body.evenemang-page .ev-card-img {
+    width: 100%;
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+}
+
+body.evenemang-page .ev-img-kalas {
+    background-image: url('../img/pizza.jpg');
+}
+body.evenemang-page .ev-img-bord {
+    background-image: url('../img/bord.jpg');
+}
+body.evenemang-page .ev-img-event {
+    background-image: url('../img/ugn.jpg');
+}
+
+body.evenemang-page .ev-card h3 {
+    margin: 18px 0 10px 0;
+    color: #9f1414;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+body.evenemang-page .ev-card p {
+    margin: 0 18px 20px 18px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+body.evenemang-page .ev-card-btn {
+    display: inline-block;
+    padding: 11px 30px;
+    background-color: #f6dddd;
+    color: #9f1414;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: background-color 0.2s;
+}
+
+body.evenemang-page .ev-card-btn:hover {
+    background-color: #ebc5c5;
+}
+
+/* --- TEXTSEKTION --- */
+body.evenemang-page .ev-text-section {
+    background-color: #f3eceb;
+    padding: 55px 20px 60px 20px;
+    text-align: center;
+}
+
+body.evenemang-page .ev-text-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3a1a00;
+    margin: 0 0 20px 0;
+}
+
+body.evenemang-page .ev-text-body {
+    max-width: 760px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.75;
+}
+
+/* ---------- EVENEMANG DESKTOP ---------- */
+@media (min-width: 769px) {
+    body.evenemang-page #container {
+        display: grid;
+        min-height: 100vh;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: 125px auto 125px;
+        grid-template-areas:
+            "hd nav"
+            "mn mn"
+            "ft ft";
+    }
+
+    body.evenemang-page header {
+        grid-area: hd;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+    }
+
+    body.evenemang-page nav {
+        grid-area: nav;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    body.evenemang-page nav ul {
+        display: flex;
+        gap: 32px;
+    }
+
+    body.evenemang-page main {
+        grid-area: mn;
+    }
+
+    body.evenemang-page .ev-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    body.evenemang-page footer {
+        grid-area: ft;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+    }
+}
+
+/* ---------- EVENEMANG MOBIL ---------- */
+@media (max-width: 768px) {
+    body.evenemang-page #container {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft";
+    }
+
+    body.evenemang-page header {
+        grid-area: hd;
+        min-height: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: sticky;
+        top: 0;
+    }
+
+    body.evenemang-page .menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+
+    body.evenemang-page nav {
+        position: fixed;
+        top: 125px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 125px);
+        z-index: 1000;
+        transition: 0.4s ease-in-out;
+        background-color: #9f1414;
+    }
+
+    body.evenemang-page nav.active {
+        right: 0;
+    }
+
+    body.evenemang-page nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+        padding-top: 50px;
+    }
+
+    body.evenemang-page main {
+        grid-area: mn;
+    }
+
+    body.evenemang-page .ev-hero {
+        height: calc(100vh - 125px);
+        background-size: 150%;
+        background-attachment: scroll;
+        padding: 0 0 50px 0;
+    }
+
+    body.evenemang-page .ev-hero-btn {
+        font-size: 0.9rem;
+        padding: 14px 28px;
+    }
+
+    body.evenemang-page .ev-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body.evenemang-page footer {
+        grid-area: ft;
+        height: auto;
+        min-height: 125px;
+        padding: 25px 20px;
+    }
+}
