@@ -19,7 +19,6 @@ body {
 
 /* GEMENSAM HEADER */
 header {
-    background-color: #9f1414;
     color: white;
     font-size: 1.4rem;
     font-weight: 700;
@@ -80,7 +79,6 @@ nav a {
     text-transform: uppercase;
     text-align: center;
     padding-top: 36px;
-    opacity: 0.5;
     margin: 0 0 10px 0;
     display: none;
 }
@@ -135,7 +133,7 @@ footer {
 
 .footer-links a,
 .footer-links span {
-    color: #f3eaea;
+    color: white;
     text-decoration: none;
     font-size: 0.85rem;
     margin: 0 4px;
@@ -145,7 +143,7 @@ footer {
     width: 100%;
     text-align: center;
     font-size: 0.72rem;
-    color: rgba(255,255,255,0.5);
+    color: white;
     letter-spacing: 1px;
     margin: 0;
 }
@@ -289,11 +287,6 @@ body.main-page .hero-bg {
     background: url('../img/ugn.jpg') center/cover no-repeat;
 }
 
-@keyframes zoomout {
-    from { transform: scale(1.08); }
-    to   { transform: scale(1.0); }
-}
-
 body.main-page .hero-overlay {
     position: absolute;
     inset: 0;
@@ -311,11 +304,6 @@ body.main-page .hero-content {
     text-align: center;
     padding: 0 24px;
     color: white;
-}
-
-@keyframes fadeup {
-    from { opacity: 0; transform: translateY(30px); }
-    to   { opacity: 1; transform: translateY(0); }
 }
 
 body.main-page .hero-eyebrow {
@@ -395,15 +383,6 @@ body.main-page .btn-outline {
 body.main-page .btn-outline:hover {
     border-color: #c9a84c;
     color: #c9a84c;
-}
-
-body.main-page .scroll-hint {
-    display: none;
-}
-
-@keyframes bobble {
-    0%,100% { transform: translateX(-50%) translateY(0); }
-    50%      { transform: translateX(-50%) translateY(8px); }
 }
 
 body.main-page .about-strip {
@@ -604,7 +583,7 @@ body.menu-page .pizza-item img {
     display: block;
 }
 
-body.menu-page .pizza-item h3 {
+body.menu-page .pizza-item h2 {
     margin: 15px 0 10px 0;
     color: #9f1414;
     font-size: 1.25rem;
@@ -736,7 +715,7 @@ body.product-page .prod-price-label {
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #999;
+    color: black;
 }
 
 body.product-page .prod-price-value {
@@ -1138,7 +1117,7 @@ body.evenemang-page .ev-stat-label {
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
+    color: white;
 }
 
 /* EVENEMANG MOBIL */
