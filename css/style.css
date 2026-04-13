@@ -1,6 +1,5 @@
-/* ==========================================
-   1. GENERELL STIL
-   ========================================== */
+/* GENERELL STIL*/
+
 
 * {
     box-sizing: border-box;
@@ -15,28 +14,53 @@ body {
 #container {
     width: 100%;
     min-height: 100vh;
+    display: block;
 }
 
+/* GEMENSAM HEADER */
 header {
     background-color: #9f1414;
     color: white;
-    font-size: 2.1rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    background: rgba(159,20,20,0.92);
+    backdrop-filter: blur(10px);
     z-index: 1001;
-    position: relative;
-    height: 125px;
 }
 
+header.scrolled {
+    background: rgba(100,10,10,0.97);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* GEMENSAM NAV */
 nav {
-    background-color: #9f1414;
-    height: 125px;
+    height: auto;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    gap: 32px;
 }
 
 nav a {
@@ -47,20 +71,52 @@ nav a {
     font-size: 0.85rem;
 }
 
-main {
+
+.nav-title {
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
     text-align: center;
+    padding-top: 36px;
+    opacity: 0.5;
+    margin: 0 0 10px 0;
+    display: none;
 }
 
+/* HAMBURGAR-KNAPP */
+.menu-btn {
+    display: none;
+}
+
+.menu-btn span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+}
+
+main {
+    display: block;
+    text-align: left;
+    padding: 0;
+}
+
+/* GEMENSAM FOOTER */
 footer {
     background-color: #9f1414;
     color: white;
     text-align: center;
-    padding: 10px 10px;
-    height: 125px;
+    height: auto;
+    min-height: 100px;
+    padding: 28px 48px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    gap: 12px;
 }
 
 .footer-social {
@@ -85,6 +141,15 @@ footer {
     margin: 0 4px;
 }
 
+.footer-copy {
+    width: 100%;
+    text-align: center;
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 1px;
+    margin: 0;
+}
+
 .social-links {
     display: flex;
     justify-content: center;
@@ -100,17 +165,6 @@ footer {
 
 .social-links img:hover {
     transform: scale(1.2);
-}
-
-.menu-btn {
-    display: none;
-}
-
-.menu-btn span {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
 }
 
 .main-btn {
@@ -136,13 +190,8 @@ footer {
     box-shadow: 0 4px 10px rgba(0,0,0,0.18);
 }
 
-.bg-pizza {
-    background-image: url('../img/pizza.jpg');
-}
-
-.bg-restaurang {
-    background-image: url('../img/bord.jpg');
-}
+.bg-pizza { background-image: url('../img/pizza.backgrund.jpg'); }
+.bg-restaurang { background-image: url('../img/bord.jpg'); }
 
 .bg-pizza a,
 .bg-restaurang a {
@@ -158,236 +207,358 @@ footer {
     font-size: 1.25rem;
 }
 
-
-/* ==========================================
-   2. MAIN-SIDA
-   ========================================== */
-
-body.main-page main {
-    background-image:
-        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
-        url('../img/ugn.jpg');
-    background-repeat: no-repeat;
-    color: white;
-}
-
-body.main-page main h1 {
-    margin: 0 0 10px 0;
-    font-size: 3.6rem;
-    font-weight: 700;
-}
-
-body.main-page main h2 {
-    margin: 0 0 16px 0;
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-body.main-page main p {
-    margin: 0 auto;
-    max-width: 720px;
-    line-height: 1.4;
-    font-size: 1.1rem;
-}
-
-body.main-page aside {
-    background-color: #f3eceb;
-}
-
-
-/* ---------- MAIN-SIDA DESKTOP ---------- */
-@media (min-width: 769px) {
-    body.main-page #container {
-        display: grid;
-        height: 150vh;
-        grid-template-columns: 40% 60%;
-        grid-template-rows: 125px 1fr 30% 125px;
-        grid-template-areas:
-            "hd nav"
-            "mn mn"
-            "as as"
-            "ft ft";
-    }
-
-    body.main-page header {
-        grid-area: hd;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-    }
-
-    body.main-page nav {
-        grid-area: nav;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.main-page nav ul {
-        display: flex;
-        gap: 32px;
-    }
-
-    body.main-page main {
-        grid-area: mn;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 520px;
-        padding: 40px 20px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    body.main-page .hero-text {
-        text-align: center;
-        transform: translateY(-5px);
-    }
-
-    body.main-page aside {
-        grid-area: as;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 30px 20px;
-        min-height: 24vh;
-    }
-
-    body.main-page .bilder {
-        display: flex;
-        gap: 70px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    body.main-page .bg-pizza,
-    body.main-page .bg-restaurang {
-        width: 400px;
-        height: 210px;
-    }
-
-    body.main-page footer {
-        grid-area: ft;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-    }
-}
-
-/* ---------- MAIN-SIDA MOBIL ---------- */
+/* GEMENSAM MOBIL (alla sidor)  */
 @media (max-width: 768px) {
-    body.main-page #container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "hd"
-            "mn"
-            "as"
-            "ft";
-    }
-
-    body.main-page header {
-        grid-area: hd;
-        min-height: 125px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
+    header {
         position: sticky;
-        top: 0;
+        height: 70px;
+        padding: 0 20px;
+        font-size: 1.1rem;
+        background: #9f1414;
+        backdrop-filter: none;
     }
 
-    body.main-page .menu-btn {
+    nav {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 70%;
+        height: calc(100vh - 70px);
+        z-index: 1000;
+        transition: 0.4s ease-in-out;
+        background-color: #9f1414;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 44px;
+        padding-top: 20px;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+    }
+
+    .nav-title {
+        display: block;
+    }
+
+    .menu-btn {
         display: flex;
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
     }
 
-    body.main-page nav {
-        position: fixed;
-        top: 125px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 125px);
-        z-index: 1000;
-        transition: 0.4s ease-in-out;
-        background-color: #9f1414;
-    }
-
-    body.main-page nav.active {
-        right: 0;
-    }
-
-    body.main-page nav ul {
-        display: flex;
+    footer {
         flex-direction: column;
         align-items: center;
-        gap: 28px;
-        padding-top: 50px;
-    }
-
-    body.main-page main {
-        grid-area: mn;
-        min-height: 360px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px 20px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    body.main-page main h1 {
-        font-size: 2.2rem;
-    }
-
-    body.main-page main h2 {
-        font-size: 1.5rem;
-    }
-
-    body.main-page main p {
-        font-size: 1rem;
-    }
-
-    body.main-page aside {
-        grid-area: as;
-        padding: 25px 20px;
-    }
-
-    body.main-page .bilder {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    body.main-page .bg-pizza,
-    body.main-page .bg-restaurang {
-        width: 90vw;
-        max-width: 340px;
-        height: 180px;
-    }
-
-    body.main-page footer {
-        grid-area: ft;
-        height: auto;
-        min-height: 125px;
-        padding: 25px 20px;
+        padding: 28px 20px;
+        text-align: center;
     }
 }
 
 
-/* ==========================================
-   3. MENY-SIDA
-   ========================================== */
+/* 2. MAIN-SIDA  */
+
+body.main-page {
+    background-color: #1a0606;
+}
+
+body.main-page .hero {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+body.main-page .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../img/ugn.jpg') center/cover no-repeat;
+}
+
+@keyframes zoomout {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.0); }
+}
+
+body.main-page .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.5) 60%,
+        rgba(26,6,6,0.95) 100%
+    );
+}
+
+body.main-page .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    color: white;
+}
+
+@keyframes fadeup {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+body.main-page .hero-eyebrow {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 22px;
+    border-top: 1px solid #c9a84c;
+    border-bottom: 1px solid #c9a84c;
+    padding: 6px 16px;
+}
+
+body.main-page .hero-content h1 {
+    font-size: clamp(2.8rem, 8vw, 7rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+}
+
+body.main-page .hero-content h1 em {
+    font-style: italic;
+    color: #c9a84c;
+}
+
+body.main-page .hero-content p {
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    line-height: 1.75;
+    color: rgba(255,255,255,0.75);
+    max-width: 560px;
+    margin: 0 auto 36px;
+}
+
+body.main-page .hero-btns {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+body.main-page .btn-primary {
+    display: inline-block;
+    padding: 14px 38px;
+    background: #9f1414;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #9f1414;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+body.main-page .btn-primary:hover {
+    background: #7a0f0f;
+    border-color: #7a0f0f;
+}
+
+body.main-page .btn-outline {
+    display: inline-block;
+    padding: 14px 38px;
+    background: transparent;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.5);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+body.main-page .btn-outline:hover {
+    border-color: #c9a84c;
+    color: #c9a84c;
+}
+
+body.main-page .scroll-hint {
+    display: none;
+}
+
+@keyframes bobble {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+body.main-page .about-strip {
+    background: #f3eceb;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+body.main-page .about-img {
+    height: 480px;
+    background: url('../img/pizza.backgrund.jpg') center/cover no-repeat;
+}
+
+body.main-page .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 64px;
+    color: #1a0606;
+}
+
+body.main-page .about-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #9f1414;
+    margin-bottom: 16px;
+}
+
+body.main-page .about-text h2 {
+    font-size: clamp(1.6rem, 3vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 18px 0;
+}
+
+body.main-page .about-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 30px 0;
+}
+
+body.main-page .about-text a {
+    display: inline-block;
+    padding: 13px 30px;
+    background: #9f1414;
+    color: white;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+body.main-page .about-text a:hover {
+    background: #7a0f0f;
+}
+
+body.main-page .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 420px;
+}
+
+body.main-page .gallery-cell {
+    position: relative;
+    overflow: hidden;
+}
+
+body.main-page .gc-bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+body.main-page .gallery-cell:hover .gc-bg {
+    transform: scale(1.06);
+}
+
+body.main-page .gc-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(1px);
+
+    display: flex;
+    align-items: flex-end;
+    padding: 28px 32px;
+
+    transition: all 0.3s ease;
+}
+
+body.main-page .gc-label {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+body.main-page .gallery-cell:hover .gc-overlay {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+body.main-page .gallery-cell a {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    text-decoration: none;
+}
+
+body.main-page .gc-bg-pizza      { background-image: url('../img/pizza.backgrund.jpg'); }
+body.main-page .gc-bg-restaurang { background-image: url('../img/bord.jpg'); }
+
+/* MAIN-SIDA MOBIL */
+@media (max-width: 768px) {
+    body.main-page .about-strip {
+        grid-template-columns: 1fr;
+    }
+
+    body.main-page .about-img {
+        height: 260px;
+    }
+
+    body.main-page .about-text {
+        padding: 36px 24px;
+    }
+
+    body.main-page .gallery-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    body.main-page .gallery-cell {
+        height: 220px;
+    }
+}
+
+
+/* 3. MENY-SIDA  */
 
 body.menu-page main {
     background-color: #f3eceb;
     color: #222;
     text-align: center;
-    padding: 50px 20px;
+    padding: 130px 20px 50px;
 }
 
 body.menu-page .menu-container {
@@ -410,6 +581,7 @@ body.menu-page .menu-text {
 body.menu-page .pizza-grid {
     display: grid;
     gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 body.menu-page .pizza-item {
@@ -459,112 +631,10 @@ body.menu-page .pizza-link {
     display: block;
 }
 
-
-/* ---------- MENY-SIDA DESKTOP ---------- */
-@media (min-width: 769px) {
-    body.menu-page #container {
-        display: grid;
-        min-height: 100vh;
-        grid-template-columns: 40% 60%;
-        grid-template-rows: 125px auto 125px;
-        grid-template-areas:
-            "hd nav"
-            "mn mn"
-            "ft ft";
-    }
-
-    body.menu-page header {
-        grid-area: hd;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-    }
-
-    body.menu-page nav {
-        grid-area: nav;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.menu-page nav ul {
-        display: flex;
-        gap: 32px;
-    }
-
-    body.menu-page main {
-        grid-area: mn;
-    }
-
-    body.menu-page .pizza-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    body.menu-page footer {
-        grid-area: ft;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-    }
-}
-
-
-/* ---------- MENY-SIDA MOBIL ---------- */
+/* MENY-SIDA MOBIL */
 @media (max-width: 768px) {
-    body.menu-page #container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "hd"
-            "mn"
-            "ft";
-    }
-
-    body.menu-page header {
-        grid-area: hd;
-        min-height: 125px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
-    }
-
-    body.menu-page .menu-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    body.menu-page nav {
-        position: fixed;
-        top: 125px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 125px);
-        z-index: 1000;
-        transition: 0.4s ease-in-out;
-        background-color: #9f1414;
-    }
-
-    body.menu-page nav.active {
-        right: 0;
-    }
-
-    body.menu-page nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-        padding-top: 50px;
-    }
-
     body.menu-page main {
-        grid-area: mn;
-        padding: 40px 20px;
+        padding: 100px 20px 40px;
     }
 
     body.menu-page .menu-title {
@@ -574,161 +644,195 @@ body.menu-page .pizza-link {
     body.menu-page .pizza-grid {
         grid-template-columns: 1fr;
     }
-
-    body.menu-page footer {
-        grid-area: ft;
-        height: auto;
-        min-height: 125px;
-        padding: 25px 20px;
-    }
 }
 
 
-/* ==========================================
-   4. PRODUKT-SIDA
-   ========================================== */
+/* 4. PRODUKT-SIDA  */
 
-body.product-page main {
-    background: linear-gradient(to bottom, #f3eceb, #eee3e1);
-    color: #222;
-    padding: 0;
+body.product-page {
+    background-color: #f3eceb;
 }
 
-body.product-page .product-hero {
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-body.product-page .product-hero-image {
+body.product-page .prod-hero-img {
     width: 100%;
+    height: 420px;
     overflow: hidden;
-    background-color: #000;
-    height: auto;
+    position: relative;
+    margin-top: 80px;
 }
 
-body.product-page .product-hero-image img {
+body.product-page .prod-hero-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
     display: block;
-    object-fit: unset;
 }
 
-body.product-page .product-hero-content {
-    background: white;
-    padding: 40px 24px 50px 24px;
+body.product-page .prod-hero-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, transparent, #f3eceb);
+}
+
+body.product-page .prod-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 48px 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
     text-align: left;
 }
 
-body.product-page .product-tag {
+body.product-page .prod-tag {
     display: inline-block;
-    margin: 0 0 16px 0;
-    padding: 8px 14px;
-    background-color: #f6dddd;
+    padding: 6px 14px;
+    background: #f6dddd;
     color: #9f1414;
     border-radius: 999px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-body.product-page .product-hero-content h1 {
-    margin: 0 0 16px 0;
-    font-size: 3rem;
-    color: #9f1414;
-    line-height: 1.1;
-}
-
-body.product-page .product-lead {
-    max-width: 700px;
-    margin: 0 0 25px 0;
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-}
-
-body.product-page .product-price-box {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #9f1414;
-    color: white;
-    padding: 16px 22px;
-    border-radius: 12px;
-    margin-bottom: 25px;
-    min-width: 150px;
-    box-shadow: 0 8px 20px rgba(159, 20, 20, 0.25);
-}
-
-body.product-page .price-label {
-    font-size: 0.9rem;
-    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    opacity: 0.9;
+    margin-bottom: 18px;
 }
 
-body.product-page .price-value {
-    font-size: 2rem;
+body.product-page .prod-name {
+    font-size: clamp(2.4rem, 5vw, 4rem);
     font-weight: 700;
-    margin-top: 4px;
+    color: #1a0606;
+    line-height: 1.05;
+    margin: 0 0 12px 0;
 }
 
-body.product-page .product-info-list {
-    margin-bottom: 30px;
+body.product-page .prod-divider {
+    width: 40px;
+    height: 3px;
+    background: #9f1414;
+    margin: 0 0 22px 0;
 }
 
-body.product-page .product-info-list p {
-    margin: 10px 0;
-    font-size: 1rem;
-    color: #333;
+body.product-page .prod-lead {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #666;
+    margin: 0 0 30px 0;
+    max-width: 500px;
 }
 
-body.product-page .product-hero-content {
+body.product-page .prod-price {
     display: flex;
-    gap: 40px;
-    align-items: flex-start;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 28px;
 }
 
-body.product-page .product-details {
-    flex: 1;
+body.product-page .prod-price-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
 }
 
-body.product-page .product-recommendations {
-    flex: 1;
+body.product-page .prod-price-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #9f1414;
+    line-height: 1;
+}
+
+body.product-page .prod-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 34px;
+}
+
+body.product-page .prod-info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+}
+
+body.product-page .prod-info-key {
+    font-weight: 700;
+    color: #444;
+    min-width: 110px;
+}
+
+body.product-page .prod-info-val {
+    color: #666;
+}
+
+body.product-page .btn-back {
+    display: inline-block;
+    padding: 13px 30px;
+    background: #9f1414;
+    color: white;
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+body.product-page .btn-back:hover {
+    background: #7a0f0f;
+}
+
+body.product-page .prod-recs {
     padding-top: 10px;
 }
 
-body.product-page .product-recommendations h2 {
-    font-size: 1.3rem;
+body.product-page .prod-recs-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
     color: #9f1414;
-    margin: 0 0 20px 0;
+    margin-bottom: 8px;
 }
 
-body.product-page .rec-grid {
+body.product-page .prod-recs h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a0606;
+    margin: 0 0 26px 0;
+}
+
+body.product-page .rec-list {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
 }
 
 body.product-page .rec-item {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 16px;
     text-decoration: none;
     color: #222;
-    background: #f9f2f2;
-    border-radius: 10px;
-    padding: 10px;
-    transition: transform 0.2s;
+    background: white;
+    border: 1px solid #ece3e3;
+    padding: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 body.product-page .rec-item:hover {
-    transform: translateX(5px);
+    border-color: #9f1414;
+    box-shadow: 0 4px 16px rgba(159,20,20,0.1);
 }
 
 body.product-page .rec-img {
     width: 80px;
     height: 80px;
-    border-radius: 8px;
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
@@ -742,442 +846,325 @@ body.product-page .rec-info {
 
 body.product-page .rec-name {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.98rem;
 }
 
 body.product-page .rec-price {
     color: #9f1414;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
 }
 
-
-/* ---------- PRODUKT-SIDA DESKTOP ---------- */
-@media (min-width: 769px) {
-    body.product-page #container {
-        display: grid;
-        min-height: 100vh;
-        grid-template-columns: 40% 60%;
-        grid-template-rows: 125px auto 125px;
-        grid-template-areas:
-            "hd nav"
-            "mn mn"
-            "ft ft";
-    }
-
-    body.product-page header {
-        grid-area: hd;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-    }
-
-    body.product-page nav {
-        grid-area: nav;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.product-page nav ul {
-        display: flex;
-        gap: 32px;
-    }
-
-    body.product-page main {
-        grid-area: mn;
-    }
-
-    body.product-page .product-hero-image {
-        height: auto;
-    }
-
-    body.product-page .product-hero-content {
-        padding: 55px 70px 65px 70px;
-    }
-
-    body.product-page .product-hero-content h1 {
-        font-size: 4rem;
-    }
-
-    body.product-page .product-lead {
-        font-size: 1.15rem;
-    }
-
-    body.product-page footer {
-        grid-area: ft;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-    }
+body.product-page .rec-arrow {
+    margin-left: auto;
+    color: #9f1414;
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
-
-/* ---------- PRODUKT-SIDA MOBIL ---------- */
+/*PRODUKT-SIDA MOBIL  */
 @media (max-width: 768px) {
-    body.product-page #container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "hd"
-            "mn"
-            "ft";
+    body.product-page .prod-hero-img {
+        height: 260px;
+        margin-top: 70px;
     }
 
-    body.product-page header {
-        grid-area: hd;
-        min-height: 125px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
-    }
-
-    body.product-page .menu-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    body.product-page nav {
-        position: fixed;
-        top: 125px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 125px);
-        z-index: 1000;
-        transition: 0.4s ease-in-out;
-        background-color: #9f1414;
-    }
-
-    body.product-page nav.active {
-        right: 0;
-    }
-
-    body.product-page nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-        padding-top: 50px;
-    }
-
-    body.product-page main {
-        grid-area: mn;
-    }
-
-    body.product-page .product-hero-image {
-        height: auto;
-    }
-
-    body.product-page .product-hero-content {
-        padding: 28px 20px 35px 20px;
-    }
-
-    body.product-page .product-hero-content h1 {
-        font-size: 2.4rem;
-    }
-
-    body.product-page .product-lead {
-        font-size: 1rem;
-    }
-
-    body.product-page .price-value {
-        font-size: 1.7rem;
-    }
-
-    body.product-page footer {
-        grid-area: ft;
-        height: auto;
-        min-height: 125px;
-        padding: 25px 20px;
+    body.product-page .prod-content {
+        grid-template-columns: 1fr;
+        padding: 28px 20px 60px;
+        gap: 40px;
     }
 }
 
-/* ==========================================
-   5. EVENEMANG-SIDA
-   ========================================== */
+
+/* 5. EVENEMANG-SIDA */
+
+body.evenemang-page {
+    background-color: #1a0606;
+}
 
 body.evenemang-page .ev-hero {
-    width: 100%;
-    height: calc(100vh - 125px);
-    background-image: url('../img/backgrund.jpg');
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #1a0a0a;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-body.evenemang-page .ev-hero-btn {
+body.evenemang-page .ev-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../img/backgrund.jpg') center/cover no-repeat;
+}
+
+body.evenemang-page .ev-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.45) 0%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(26,6,6,1) 100%
+    );
+}
+
+body.evenemang-page .ev-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 24px;
+    color: white;
+}
+
+body.evenemang-page .ev-hero-tag {
     display: inline-block;
-    padding: 16px 40px;
-    background-color: #9f1414;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    margin-bottom: 22px;
+    border-top: 1px solid #c9a84c;
+    border-bottom: 1px solid #c9a84c;
+    padding: 6px 16px;
+}
+
+body.evenemang-page .ev-hero h1 {
+    font-size: clamp(2.6rem, 7vw, 6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    margin: 0 0 20px 0;
+}
+
+body.evenemang-page .ev-hero h1 em {
+    font-style: italic;
+    color: #c9a84c;
+}
+
+body.evenemang-page .ev-hero p {
+    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    margin: 0 auto 36px;
+}
+
+body.evenemang-page .btn-gold {
+    display: inline-block;
+    padding: 14px 42px;
+    background: #9f1414;
     color: white;
     font-weight: 700;
-    font-size: 1rem;
-    border: 2px solid rgba(255,255,255,0.45);
-    border-radius: 4px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.2s;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: background 0.2s;
 }
 
-body.evenemang-page .ev-hero-btn:hover {
-    background-color: #7a0f0f;
+body.evenemang-page .btn-gold:hover {
+    background: #7a0f0f;
 }
 
-
-body.evenemang-page .ev-intro {
-    background-color: #f3eceb;
-    padding: 55px 20px 30px 20px;
-    text-align: center;
+body.evenemang-page .ev-section {
+    background: #1a0606;
+    padding: 90px 48px;
 }
 
-body.evenemang-page .ev-intro-title {
-    font-size: 2rem;
+body.evenemang-page .ev-section-label {
+    font-size: 0.7rem;
     font-weight: 700;
-    color: #3a1a00;
-    margin: 0 0 14px 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c9a84c;
+    text-align: center;
+    margin-bottom: 14px;
 }
 
-body.evenemang-page .ev-intro-text {
-    max-width: 680px;
-    margin: 0 auto;
-    font-size: 1.05rem;
-    color: #444;
-    line-height: 1.7;
+body.evenemang-page .ev-section-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    color: white;
+    margin: 0 0 55px 0;
 }
 
-
-body.evenemang-page .ev-cards-section {
-    background-color: #9f1414;
-    padding: 50px 20px 60px 20px;
-}
-
-body.evenemang-page .ev-cards-grid {
+body.evenemang-page .ev-cards {
     display: grid;
-    gap: 25px;
-    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.07);
+    max-width: 1100px;
     margin: 0 auto;
 }
 
 body.evenemang-page .ev-card {
-    background: white;
-    border-radius: 14px;
+    background: #200a0a;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    padding-bottom: 24px;
-    text-align: center;
-    transition: transform 0.25s ease;
+    transition: background 0.3s;
 }
 
 body.evenemang-page .ev-card:hover {
-    transform: translateY(-6px);
+    background: #2e0d0d;
 }
 
 body.evenemang-page .ev-card-img {
-    width: 100%;
-    height: 220px;
+    height: 230px;
     background-size: cover;
     background-position: center;
+    transition: transform 0.5s ease;
 }
 
-body.evenemang-page .ev-img-kalas {
-    background-image: url('../img/pizza.jpg');
+body.evenemang-page .ev-card:hover .ev-card-img {
+    transform: scale(1.04);
 }
-body.evenemang-page .ev-img-bord {
-    background-image: url('../img/bord.jpg');
+
+body.evenemang-page .ev-card-body {
+    padding: 30px 28px 34px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
-body.evenemang-page .ev-img-event {
-    background-image: url('../img/ugn.jpg');
+
+body.evenemang-page .ev-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
 body.evenemang-page .ev-card h3 {
-    margin: 18px 0 10px 0;
-    color: #9f1414;
-    font-size: 1.15rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    color: white;
+    margin: 0 0 12px 0;
+    letter-spacing: 0.3px;
 }
 
 body.evenemang-page .ev-card p {
-    margin: 0 18px 20px 18px;
-    color: #555;
-    font-size: 0.95rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.5);
+    margin: 0 0 26px 0;
+    flex: 1;
 }
 
 body.evenemang-page .ev-card-btn {
     display: inline-block;
-    padding: 11px 30px;
-    background-color: #f6dddd;
-    color: #9f1414;
+    padding: 11px 26px;
+    background: transparent;
+    color: #c9a84c;
     font-weight: 700;
-    font-size: 0.85rem;
-    border: none;
-    border-radius: 6px;
-    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid #c9a84c;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    transition: background-color 0.2s;
+    transition: background 0.2s, color 0.2s;
+    align-self: flex-start;
 }
 
 body.evenemang-page .ev-card-btn:hover {
-    background-color: #ebc5c5;
+    background: #c9a84c;
+    color: #1a0606;
 }
 
-/* --- TEXTSEKTION --- */
-body.evenemang-page .ev-text-section {
-    background-color: #f3eceb;
-    padding: 55px 20px 60px 20px;
+body.evenemang-page .ev-img-kalas  { background-image: url('../img/pizza.jpg'); }
+body.evenemang-page .ev-img-bord   { background-image: url('../img/bord.jpg'); }
+body.evenemang-page .ev-img-event  { background-image: url('../img/ugn.jpg'); }
+
+body.evenemang-page .ev-why {
+    background: #9f1414;
+    padding: 90px 48px;
     text-align: center;
 }
 
-body.evenemang-page .ev-text-title {
-    font-size: 1.8rem;
+body.evenemang-page .ev-why-label {
+    font-size: 0.7rem;
     font-weight: 700;
-    color: #3a1a00;
-    margin: 0 0 20px 0;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 14px;
 }
 
-body.evenemang-page .ev-text-body {
-    max-width: 760px;
-    margin: 0 auto;
+body.evenemang-page .ev-why h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin: 0 0 22px 0;
+}
+
+body.evenemang-page .ev-why p {
+    max-width: 680px;
+    margin: 0 auto 55px;
     font-size: 1.05rem;
-    color: #444;
-    line-height: 1.75;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.75);
 }
 
-/* ---------- EVENEMANG DESKTOP ---------- */
-@media (min-width: 769px) {
-    body.evenemang-page #container {
-        display: grid;
-        min-height: 100vh;
-        grid-template-columns: 40% 60%;
-        grid-template-rows: 125px auto 125px;
-        grid-template-areas:
-            "hd nav"
-            "mn mn"
-            "ft ft";
-    }
-
-    body.evenemang-page header {
-        grid-area: hd;
-        display: flex;
-        align-items: center;
-        padding-left: 30px;
-    }
-
-    body.evenemang-page nav {
-        grid-area: nav;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    body.evenemang-page nav ul {
-        display: flex;
-        gap: 32px;
-    }
-
-    body.evenemang-page main {
-        grid-area: mn;
-    }
-
-    body.evenemang-page .ev-cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    body.evenemang-page footer {
-        grid-area: ft;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 30px;
-    }
+body.evenemang-page .ev-stats {
+    display: flex;
+    justify-content: center;
+    max-width: 780px;
+    margin: 0 auto;
+    border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* ---------- EVENEMANG MOBIL ---------- */
+body.evenemang-page .ev-stat {
+    flex: 1;
+    padding: 34px 20px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+}
+
+body.evenemang-page .ev-stat:last-child {
+    border-right: none;
+}
+
+body.evenemang-page .ev-stat-num {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+body.evenemang-page .ev-stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+}
+
+/* EVENEMANG MOBIL */
 @media (max-width: 768px) {
-    body.evenemang-page #container {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-areas:
-            "hd"
-            "mn"
-            "ft";
+    body.evenemang-page .ev-section {
+        padding: 60px 20px;
     }
 
-    body.evenemang-page header {
-        grid-area: hd;
-        min-height: 125px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
-    }
-
-    body.evenemang-page .menu-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-    }
-
-    body.evenemang-page nav {
-        position: fixed;
-        top: 125px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 125px);
-        z-index: 1000;
-        transition: 0.4s ease-in-out;
-        background-color: #9f1414;
-    }
-
-    body.evenemang-page nav.active {
-        right: 0;
-    }
-
-    body.evenemang-page nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 28px;
-        padding-top: 50px;
-    }
-
-    body.evenemang-page main {
-        grid-area: mn;
-    }
-
-    body.evenemang-page .ev-hero {
-        height: calc(100vh - 125px);
-        background-size: 150%;
-        background-attachment: scroll;
-        padding: 0 0 50px 0;
-    }
-
-    body.evenemang-page .ev-hero-btn {
-        font-size: 0.9rem;
-        padding: 14px 28px;
-    }
-
-    body.evenemang-page .ev-cards-grid {
+    body.evenemang-page .ev-cards {
         grid-template-columns: 1fr;
     }
 
-    body.evenemang-page footer {
-        grid-area: ft;
-        height: auto;
-        min-height: 125px;
-        padding: 25px 20px;
+    body.evenemang-page .ev-why {
+        padding: 60px 20px;
+    }
+
+    body.evenemang-page .ev-stats {
+        flex-direction: column;
+    }
+
+    body.evenemang-page .ev-stat {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    body.evenemang-page .ev-stat:last-child {
+        border-bottom: none;
     }
 }

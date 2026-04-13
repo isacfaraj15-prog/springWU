@@ -3,109 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produkt - Sannegårdens Pizzeria</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Margherita – Sannegårdens Pizzeria</title>
 </head>
 <body class="product-page">
     <div id="container">
 
-        <header>
-            SANNEGÅRDENS
+        <header id="mainHeader">
+            <div class="brand">SANNEGÅRDENS</div>
+
+            <nav id="navbar">
+                <p class="nav-title">NAVIGERING</p>
+                <ul>
+                    <li><a href="main.html">Hem</a></li>
+                    <li><a href="meny.html">Meny</a></li>
+                    <li><a href="evenemang.html">Boka Bord</a></li>
+                </ul>
+            </nav>
+
             <div class="menu-btn" id="menuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </header>
 
-        <nav id="navbar">
-            <ul>
-                <li><a href="main.html">Hem</a></li>
-                <li><a href="meny.html">Vår meny</a></li>
-                <li><a href="evenemang.html">Boka</a></li>
-            </ul>
-        </nav>
-
         <main>
-            <section class="product-hero">
-                <div class="product-hero-image">
-                    <img src="img/mozarella2.jpg" alt="Margherita pizza">
-                </div>
+            <div class="prod-hero-img">
+                <img src="img/mozarella2.jpg" alt="Margherita pizza">
+            </div>
 
-                <div class="product-hero-content">
-                    <div class="product-details">
-                        <p class="product-tag">KLASSISK FAVORIT</p>
-                        <h1>MARGHERITA</h1>
-                        <p class="product-lead">
-                            En enkel och elegant pizza med fyllig tomatsås och smält mozzarella.
-                            Perfekt för dig som älskar klassiska italienska smaker.
-                        </p>
+            <div class="prod-content">
+                <div class="prod-details">
+                    <span class="prod-tag">Klassisk Favorit</span>
+                    <h1 class="prod-name">Margherita</h1>
+                    <div class="prod-divider"></div>
+                    <p class="prod-lead">En enkel och elegant pizza med fyllig tomatsås och smält mozzarella. Perfekt för dig som älskar klassiska italienska smaker.</p>
 
-                        <div class="product-price-box">
-                            <span class="price-label">Pris</span>
-                            <span class="price-value">95 kr</span>
-                        </div>
-
-                        <div class="product-info-list">
-                            <p><strong>Ingredienser:</strong> Tomatsås, mozzarella</p>
-                            <p><strong>Storlek:</strong> Normal</p>
-                            <p><strong>Allergener:</strong> Mjölk, gluten</p>
-                        </div>
-
-                        <a href="meny.html" class="main-btn">Tillbaka till menyn</a>
+                    <div class="prod-price">
+                        <span class="prod-price-label">Pris</span>
+                        <span class="prod-price-value">95 kr</span>
                     </div>
 
-                    <div class="product-recommendations">
-                        <h2>Du kanske också gillar</h2>
-                        <div class="rec-grid">
-                            <a href="produkt.html" class="rec-item">
-                                <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
-                                <div class="rec-info">
-                                    <span class="rec-name">Vesuvio</span>
-                                    <span class="rec-price">105 kr</span>
-                                </div>
-                            </a>
-                            <a href="produkt.html" class="rec-item">
-                                <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
-                                <div class="rec-info">
-                                    <span class="rec-name">Capricciosa</span>
-                                    <span class="rec-price">115 kr</span>
-                                </div>
-                            </a>
-                            <a href="produkt.html" class="rec-item">
-                                <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
-                                <div class="rec-info">
-                                    <span class="rec-name">Quattro Formaggi</span>
-                                    <span class="rec-price">120 kr</span>
-                                </div>
-                            </a>
+                    <div class="prod-info">
+                        <div class="prod-info-row">
+                            <span class="prod-info-key">Ingredienser</span>
+                            <span class="prod-info-val">Tomatsås, mozzarella</span>
+                        </div>
+                        <div class="prod-info-row">
+                            <span class="prod-info-key">Storlek</span>
+                            <span class="prod-info-val">Normal</span>
+                        </div>
+                        <div class="prod-info-row">
+                            <span class="prod-info-key">Allergener</span>
+                            <span class="prod-info-val">Mjölk, gluten</span>
                         </div>
                     </div>
+
+                    <span class="btn-back">Beställ</span>
                 </div>
-            </section>
+
+                <div class="prod-recs">
+                    <p class="prod-recs-label">Du kanske också gillar</p>
+                    <h2>Fler alternativ</h2>
+                    <div class="rec-list">
+                        <a href="produkt.html" class="rec-item">
+                            <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
+                            <div class="rec-info">
+                                <span class="rec-name">Vesuvio</span>
+                                <span class="rec-price">105 kr</span>
+                            </div>
+                            <span class="rec-arrow">→</span>
+                        </a>
+                        <a href="produkt.html" class="rec-item">
+                            <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
+                            <div class="rec-info">
+                                <span class="rec-name">Capricciosa</span>
+                                <span class="rec-price">115 kr</span>
+                            </div>
+                            <span class="rec-arrow">→</span>
+                        </a>
+                        <a href="produkt.html" class="rec-item">
+                            <div class="rec-img" style="background-image: url('img/pizza.jpg')"></div>
+                            <div class="rec-info">
+                                <span class="rec-name">Quattro Formaggi</span>
+                                <span class="rec-price">120 kr</span>
+                            </div>
+                            <span class="rec-arrow">→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <footer class="site-footer">
-            <div class="footer-inner">
-                <div class="footer-social">
-                    <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo (1).png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com" target="_blank"><img src="img/twitter.png" alt="Instagram"></a>
-                    <a href="https://www.tiktok.com" target="_blank"><img src="img/video.png" alt="TikTok"></a>
-                </div>
-                <div class="footer-links">
-                    <a href="om-oss.html" class="about-link">Om oss</a>
-                    <span class="dot">•</span>
-                    <span>Allergiinformation</span>
-                    <span class="dot">•</span>
-                    <span>Kontakt</span>
-                </div>
-                <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo (1).png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="img/twitter.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com" target="_blank"><img src="img/video.png" alt="TikTok"></a>
             </div>
+            <div class="footer-links">
+                <a href="om-oss.html">Om oss</a>
+                <span class="dot">•</span>
+                <span>Allergiinformation</span>
+                <span class="dot">•</span>
+                <span>Kontakt</span>
+            </div>
+            <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
         </footer>
 
     </div>
-
     <script src="js/main.js"></script>
+    
 </body>
 </html>

@@ -10,63 +10,80 @@
 <body class="main-page">
     <div id="container">
 
-        <header>
-            SANNEGÅRDENS
+        <header id="mainHeader">
+            <div class="brand">SANNEGÅRDENS</div>
+
+            <nav id="navbar">
+                <p class="nav-title">NAVIGERING</p>
+                <ul>
+                    <li><a href="main.html">Hem</a></li>
+                    <li><a href="meny.html">Meny</a></li>
+                    <li><a href="evenemang.html">Boka Bord</a></li>
+                </ul>
+            </nav>
+
             <div class="menu-btn" id="menuBtn">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </header>
 
-        <nav id="navbar">
-            <ul>
-                <li><a href="main.html">Hem</a></li>
-                <li><a href="meny.html">Vår Meny</a></li>
-                <li><a href="evenemang.html">Boka</a></li>
-            </ul>
-        </nav>
-
         <main>
-            <div class="hero-text">
-                <h1>SVERIGES BÄSTA PIZZA</h1>
-                <h2>Sedan 2008</h2>
-                <p>Välkommen till den prisbelönta pizzerian i hjärtat av Göteborg.<br>Vi serverar hantverkspizza med de färskaste ingredienserna.</p>
-                <a href="meny.html" class="main-btn">BESTÄLL NU</a>
+            <section class="hero">
+                <div class="hero-bg"></div>
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Göteborg · Sedan 2008</span>
+                    <h1>SVERIGES<br><em>Bästa</em><br>PIZZA</h1>
+                    <p>Hantverkspizza med de färskaste ingredienserna,<br>bakad med kärlek i hjärtat av Göteborg.</p>
+                    <div class="hero-btns">
+                        <a href="meny.html" class="btn-primary">Beställ Nu</a>
+                        <a href="evenemang.html" class="btn-outline">Boka Bord</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about-strip">
+                <div class="about-img"></div>
+                <div class="about-text">
+                    <span class="about-label">Vår historia</span>
+                    <h2>Passion för pizza sedan 2008</h2>
+                    <p>Vi är en prisbelönt pizzeria i hjärtat av Göteborg. Varje pizza bakas på plats med äkta italienska recept och lokala råvaror – precis som det ska vara.</p>
+                    <a href="meny.html">Se Hela Menyn →</a>
+                </div>
+            </section>
+
+            <div class="gallery-grid">
+                <div class="gallery-cell">
+                    <div class="gc-bg gc-bg-pizza"></div>
+                    <div class="gc-overlay"><span class="gc-label">Våra Pizzor</span></div>
+                    <a href="meny.html"></a>
+                </div>
+                <div class="gallery-cell">
+                    <div class="gc-bg gc-bg-restaurang"></div>
+                    <div class="gc-overlay"><span class="gc-label">Vår Restaurang</span></div>
+                    <a href="evenemang.html"></a>
+                </div>
             </div>
         </main>
 
-        <aside>
-            <div class="bilder">
-                <div class="bg-pizza">
-                    <a href="meny.html">Våra Pizzor</a>
-                </div>
-                <div class="bg-restaurang">
-                    <a href="karta.html">Vår Restaurang</a>
-                </div>
-            </div>
-        </aside>
-
         <footer class="site-footer">
-            <div class="footer-inner">
-                <div class="footer-social">
-                    <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo (1).png" alt="Facebook"></a>
-                    <a href="https://www.instagram.com" target="_blank"><img src="img/twitter.png" alt="Instagram"></a>
-                    <a href="https://www.tiktok.com" target="_blank"><img src="img/video.png" alt="TikTok"></a>
-                </div>
-                <div class="footer-links">
-                    <a href="om-oss.html" class="about-link">Om oss</a>
-                    <span class="dot">•</span>
-                    <span>Allergiinformation</span>
-                    <span class="dot">•</span>
-                    <span>Kontakt</span>
-                </div>
-                <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com" target="_blank"><img src="img/facebook-logo (1).png" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="img/twitter.png" alt="Instagram"></a>
+                <a href="https://www.tiktok.com" target="_blank"><img src="img/video.png" alt="TikTok"></a>
             </div>
+            <div class="footer-links">
+                <a href="om-oss.html">Om oss</a>
+                <span class="dot">•</span>
+                <span>Allergiinformation</span>
+                <span class="dot">•</span>
+                <span>Kontakt</span>
+            </div>
+            <p class="footer-copy">© 2026 Sannegårdens Pizzeria. All Rights Reserved.</p>
         </footer>
 
     </div>
     <script src="js/main.js"></script>
+    
 </body>
 </html>
-
