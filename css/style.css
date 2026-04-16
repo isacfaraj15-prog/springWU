@@ -1,6 +1,5 @@
 /* GENERELL STIL*/
 
-
 * {
     box-sizing: border-box;
 }
@@ -14,17 +13,62 @@ body {
 #container {
     width: 100%;
     min-height: 100vh;
-    display: block;
+}
+
+/* MAIN-SIDA */
+body.main-page #container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 80px 1fr auto;
+    grid-template-areas:
+        "hd nav"
+        "mn mn"
+        "ft ft";
+}
+/* MENY-SIDA */
+body.menu-page #container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 80px 1fr auto;
+    grid-template-areas:
+        "hd nav"
+        "mn mn"
+        "ft ft";
+}
+
+/* PRODUKT-SIDA */
+body.product-page #container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 80px 1fr auto;
+    grid-template-areas:
+        "hd nav"
+        "mn mn"
+        "ft ft";
+}
+
+/* EVENEMANG-SIDA */
+body.evenemang-page #container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 80px 1fr auto;
+    grid-template-areas:
+        "hd nav"
+        "mn mn"
+        "ft ft";
 }
 
 /* GEMENSAM HEADER */
 header {
+    grid-area: hd;
     color: white;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 1px;
-    position: fixed;
-    top: 0; left: 0; right: 0;
     height: 80px;
     display: flex;
     align-items: center;
@@ -47,11 +91,13 @@ header.scrolled {
 
 /* GEMENSAM NAV */
 nav {
-    height: auto;
-    background: transparent;
+    grid-area: nav;
+    height: 80px;
+    background: rgba(159,20,20,0.92);
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding: 0 48px;
 }
 
 nav ul {
@@ -69,7 +115,6 @@ nav a {
     font-weight: 700;
     font-size: 0.85rem;
 }
-
 
 .nav-title {
     color: white;
@@ -96,6 +141,7 @@ nav a {
 }
 
 main {
+    grid-area: mn;
     display: block;
     text-align: left;
     padding: 0;
@@ -103,6 +149,7 @@ main {
 
 /* GEMENSAM FOOTER */
 footer {
+    grid-area: ft;
     background-color: #9f1414;
     color: white;
     text-align: center;
@@ -205,10 +252,21 @@ footer {
     font-size: 1.25rem;
 }
 
-/* GEMENSAM MOBIL (alla sidor)  */
+/* GEMENSAM MOBIL (alla sidor) */
 @media (max-width: 768px) {
+    body.main-page #container,
+    body.menu-page #container,
+    body.product-page #container,
+    body.evenemang-page #container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr auto;
+        grid-template-areas:
+            "hd"
+            "mn"
+            "ft";
+    }
+
     header {
-        position: sticky;
         height: 70px;
         padding: 0 20px;
         font-size: 1.1rem;
@@ -228,6 +286,7 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
+        padding: 0;
     }
 
     nav.active {
@@ -265,7 +324,7 @@ footer {
 }
 
 
-/* 2. MAIN-SIDA  */
+/* 2. MAIN-SIDA */
 
 body.main-page {
     background-color: #1a0606;
@@ -273,8 +332,7 @@ body.main-page {
 
 body.main-page .hero {
     position: relative;
-    min-height: 100vh;
-    padding-top: 80px;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -471,15 +529,11 @@ body.main-page .gallery-cell:hover .gc-bg {
 body.main-page .gc-overlay {
     position: absolute;
     inset: 0;
-
     background: rgba(0, 0, 0, 0.15);
-
     backdrop-filter: blur(1px);
-
     display: flex;
     align-items: flex-end;
     padding: 28px 32px;
-
     transition: all 0.3s ease;
 }
 
@@ -531,13 +585,13 @@ body.main-page .gc-bg-restaurang { background-image: url('../img/bord.jpg'); }
 }
 
 
-/* 3. MENY-SIDA  */
+/* 3. MENY-SIDA */
 
 body.menu-page main {
     background-color: #f3eceb;
     color: #222;
     text-align: center;
-    padding: 130px 20px 50px;
+    padding: 50px 20px 50px;
 }
 
 body.menu-page .menu-container {
@@ -613,7 +667,7 @@ body.menu-page .pizza-link {
 /* MENY-SIDA MOBIL */
 @media (max-width: 768px) {
     body.menu-page main {
-        padding: 100px 20px 40px;
+        padding: 40px 20px 40px;
     }
 
     body.menu-page .menu-title {
@@ -626,7 +680,7 @@ body.menu-page .pizza-link {
 }
 
 
-/* 4. PRODUKT-SIDA  */
+/* 4. PRODUKT-SIDA */
 
 body.product-page {
     background-color: #f3eceb;
@@ -637,7 +691,6 @@ body.product-page .prod-hero-img {
     height: 420px;
     overflow: hidden;
     position: relative;
-    margin-top: 80px;
 }
 
 body.product-page .prod-hero-img img {
@@ -841,11 +894,10 @@ body.product-page .rec-arrow {
     flex-shrink: 0;
 }
 
-/*PRODUKT-SIDA MOBIL  */
+/* PRODUKT-SIDA MOBIL */
 @media (max-width: 768px) {
     body.product-page .prod-hero-img {
         height: 260px;
-        margin-top: 70px;
     }
 
     body.product-page .prod-content {
@@ -864,7 +916,7 @@ body.evenemang-page {
 
 body.evenemang-page .ev-hero {
     position: relative;
-    height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
